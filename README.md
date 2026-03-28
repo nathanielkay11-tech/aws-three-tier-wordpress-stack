@@ -53,4 +53,29 @@ I manually configured the following core AWS components to ensure a secure and r
 ---
 
 ## 4. The Problem: "Server Busy" & File Permissions
-After the initial setup, I encountered an error where WordPress could not upload media due to Linux file permission conflicts
+After the initial setup, I encountered an error where WordPress could not upload media due to Linux file permission conflicts (`apache:apache` ownership).
+
+* **The Cloud Fix:** Updated the Launch Template with a permission-fixing script to ensure every future server is provisioned correctly.
+* **The Deployment:** Triggered an **AWS Instance Refresh** to swap old servers for fixed versions with zero downtime.
+
+### Figure 7: Infrastructure-as-Code Versioning 
+![Infrastructure-as-Code Versioning](figure7.png)
+*The version history of the Launch Template, showing the iterative troubleshooting process to finalize system requirements.*
+
+### Figure 8: High-Availability Target Group During Rolling Deployment 
+![High-Availability Target Group](figure8.png)
+*This captures the ALB mid-deployment during the Instance Refresh. It shows the 'Rolling Update' strategy: health-checking new instances while 'Draining' traffic from legacy nodes.*
+
+---
+
+## 5. Key Learnings
+* **Network Architecture:** Mastered manual routing through VPCs, Subnets, and Gateways.
+* **Security Best Practices:** Gained hands-on experience in "Least Privilege" security boundaries.
+* **Scaling Logic:** Realized that in a professional cloud setup, you fix the **template**, not the individual server.
+
+### AWS Services Manually Configured
+* **VPC & Subnets:** Network isolation and Multi-AZ redundancy.
+* **Internet & NAT Gateways:** Pathing for public ingress and secure private egress.
+* **Security Groups:** State-aware firewalls for tiered protection.
+* **EC2, ASG, & ALB:** Compute lifecycle and traffic distribution.
+* **RDS (MariaDB):** Dedicated, decoupled database management.
