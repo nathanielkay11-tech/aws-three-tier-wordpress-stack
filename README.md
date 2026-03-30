@@ -79,3 +79,35 @@ After the initial manual setup, I encountered an error where WordPress could not
 * **EC2 & Auto Scaling:** Managed server lifecycle and fleet health.
 * **Application Load Balancer:** External traffic routing and Target Group management.
 * **RDS (MariaDB):** Dedicated, decoupled database management.
+
+---
+
+## Cost Analysis & Free-Tier Optimization
+
+To validate the architecture while avoiding unnecessary AWS billing overhead during the development and testing phase, the infrastructure was strictly sized within the **AWS Free Tier** limits. 
+
+### **The Provisioned Baseline (Estimated ~$35/month if outside Free Tier)**
+* **Compute:** 2x **t2.micro** (or **t3.micro**) instances (1 vCPU, 1GB RAM) to run the Apache/WordPress web tier.
+* **Database:** 1x **db.t2.micro** (or **db.t3.micro**) RDS MySQL instance.
+* **Storage (EBS):** Standard 20GB **gp3 EBS volumes** attached to each instance for the OS and local website files.
+* **The "Hidden" Heavy:** 1x **NAT Gateway** (~$33/month baseline + $0.045 per GB). *Note: While the compute and database fell under the Free Tier, the NAT Gateway is a paid resource. In a strict zero-cost lab, this can be swapped for a NAT Instance or removed.*
+
+### **The Serverless Pivot Threshold**
+While this traditional EC2 + ALB + ASG setup is excellent for learning core infrastructure, it carries a fixed baseline cost (mainly driven by the NAT Gateway and baseline compute if Free Tier expires).
+
+**When to pivot to Serverless (AWS ECS Fargate & Aurora Serverless):**
+1. **Low or Spiky Traffic:** If the application has highly intermittent traffic (e.g., an internal tool used only a few times a week), paying for idle EC2 and RDS instances is highly inefficient.
+2. **The Break-Even:** Shifting to **AWS Fargate** (paying strictly per vCPU/second) and **Aurora Serverless v2** removes the idle compute tax, dropping the baseline cost to near-zero when inactive.
+
+---
+
+## Architectural Trade-offs
+
+Engineering is the art of making calculated trade-offs. To deliver this project on a minimal budget while proving high-availability concepts, the following decisions were made:
+
+* **Micro-Instances vs. Performance:**
+  * *The Decision:* Used `t2.micro`/`t3.micro` instances.
+  * *The Trade-off:* With only 1GB of RAM, these instances can easily bottleneck under high concurrent PHP/WordPress traffic. For a live production workload, trading cost for at least `t3.small` or `t3.medium` instances would be required to prevent memory exhaustion.
+* **Local EBS vs. Shared File Systems (EFS):**
+  * *The Decision:* Used standard EBS volumes for storage on each instance.
+  * *The Trade-off:* This is the most cost-effective storage option, but it means media files uploaded to one WordPress instance won't automatically sync to the other instance in the Auto Scaling Group. To make this production-ready, we would trade the cost savings of EBS for a shared **Amazon EFS** mount or offload media files to **Amazon S3**.
