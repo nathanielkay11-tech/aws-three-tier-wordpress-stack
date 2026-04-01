@@ -12,6 +12,7 @@ This folder contains the automated Terraform blueprints for the 3-Tier WordPress
 2. Run `terraform init` to download the AWS provider plugins.
 3. Run `terraform plan` to view the deployment blueprint.
 4. Run `terraform apply` to build the isolated, multi-AZ environment.
+5. Run `terraform destroy` when finished to safely tear down the infrastructure and avoid unnecessary AWS costs.
 
 ## ⚠️ Important Note on Dynamic AMI Resolution
 This project uses a dynamic data lookup block to always fetch the absolute latest Amazon Linux 2 AMI for the AWS region you are running in. 
