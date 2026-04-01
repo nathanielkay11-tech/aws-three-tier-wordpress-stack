@@ -1,0 +1,6 @@
+# Ignore Terraform's secret state files
+**/*.tfstate
+**/*.tfstate.backup
+
+# Ignore the heavy downloaded provider plugins
+**/.terraform/
