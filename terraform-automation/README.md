@@ -17,3 +17,8 @@ This folder contains the automated Terraform blueprints for the 3-Tier WordPress
 This project uses a dynamic data lookup block to always fetch the absolute latest Amazon Linux 2 AMI for the AWS region you are running in. 
 * **Requirement:** Ensure your executing AWS IAM user has the `ec2:DescribeImages` permission attached. 
 * Without this specific permission, AWS will block the lookup and your `terraform plan` will return a `403 Authorization` error.
+
+## 💡 Key Architectural & Security Decisions
+* **Dynamic AMI Resolution:** I used a `data` block to fetch the latest Amazon Linux 2 AMI rather than hardcoding an ID. This ensures the launch template always spins up instances with the latest security patches.
+* **Separation of Variables:** Database passwords and sensitive parameters are declared as variables without default values. This forces interactive terminal prompts or local variable files, ensuring no active secrets are accidentally committed to GitHub.
+* **Multi-AZ Fault Tolerance:** Subnets and database instances are spread across multiple Availability Zones to ensure the application stays online even if a full AWS data center goes offline.
