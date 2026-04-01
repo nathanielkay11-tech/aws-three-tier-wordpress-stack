@@ -1,3 +1,14 @@
+# High-Availability 3-Tier WordPress Stack on AWS
+
+This project demonstrates a complete journey of architecting, manually provisioning, and eventually automating a secure, highly available, three-tier WordPress environment on AWS.
+
+## 🗺️ Project Navigation
+
+* **Manual Deployment Case Study:** Scroll down to read the full operational breakdown of how I manually constructed this VPC, the decoupled DB tiers, and load balancing natively in the AWS Console.
+* **Infrastructure as Code (IaC):** Ready to see the automation? Click into the [`terraform-automation/`](./terraform-automation/) folder to see the complete set of dry, reusable Terraform blueprints that script this exact same environment!
+
+---
+
 # Case Study: Building a High-Availability WordPress Stack on AWS
 
 ## 1. Project Overview
