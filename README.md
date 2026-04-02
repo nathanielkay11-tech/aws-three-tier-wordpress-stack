@@ -22,7 +22,7 @@ To maintain maximum transparency, cost control, and a deep technical understandi
 ## 📍 Iteration 1: Manual Deployment Case Study
 
 <details>
-<summary><b>Click to expand full operational breakdown of the Manual AWS Build</b></summary>
+<summary><b> 🚀 Click to expand full operational breakdown of the Manual AWS Build 🚀 </b></summary>
 
 ### Project Overview
 
