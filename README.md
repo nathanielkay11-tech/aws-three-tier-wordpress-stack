@@ -15,7 +15,7 @@ To maintain maximum transparency, cost control, and a deep technical understandi
 * **The Goal:** I manually translated my physical build into Infrastructure as Code (IaC) files to understand the modern DevOps lifecycle and establish local state environments.
 
 ### 📍 Iteration 3: Advanced AI Prompt Engineering (The "One-Shot" Goal)
-* **What it is:** Read the section directly below regarding my use of multi-constraint AI prompting. 
+* **What it is:** Read the section directly below iteration 2 in the [terraform-automation/](./terraform-automation) folder regarding my use of multi-constraint AI prompting. 
 * **The Goal:** I used a large language model as a collaborative sounding board to stress-test prompt structures. The end goal was to reverse-engineer a single, highly constrained prompt capable of reproducing this entire repository flawlessly in one go.
 
 ---
