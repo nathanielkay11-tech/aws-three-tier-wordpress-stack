@@ -1,11 +1,22 @@
 # High-Availability 3-Tier WordPress Stack on AWS
 
-This project demonstrates a complete journey of architecting, manually provisioning, and eventually automating a secure, highly available, three-tier WordPress environment on AWS.
+This project demonstrates a complete, 3-stage evolution of architecting, manually provisioning, and eventually automating a secure, highly available, three-tier WordPress environment on AWS.
 
-## 🗺️ Project Navigation
+## 🗺️ Project Navigation: The 3 Iterations
 
-* **Manual Deployment Case Study:** Scroll down to read the full operational breakdown of how I manually constructed this VPC, the decoupled DB tiers, and load balancing natively in the AWS Console.
-* **Infrastructure as Code (IaC):** Ready to see the automation? Click into the [`terraform-automation/`](./terraform-automation/) folder to see the complete set of dry, reusable Terraform blueprints that script this exact same environment!
+To maintain maximum transparency, cost control, and a deep technical understanding, this project was developed across three distinct phases:
+
+### 📍 Iteration 1: The Manual Console Build (Foundational Knowledge)
+* **What it is:** Scroll down to read the **Manual Deployment Case Study**. I built this entire VPC, the decoupled DB tiers, and load balancing natively in the AWS Console. 
+* **The Goal:** To gain a deep operational understanding of secure networking, high-availability compute, and decoupled data layers before touching automation.
+
+### 📍 Iteration 2: Manual HCL & Basic Translation
+* **What it is:** Click into the `terraform-automation/` folder to see the complete set of dry, reusable Terraform blueprints that script this exact same environment.
+* **The Goal:** I manually translated my physical build into Infrastructure as Code (IaC) files to understand the modern DevOps lifecycle and establish local state environments.
+
+### 📍 Iteration 3: Advanced AI Prompt Engineering (The "One-Shot" Goal)
+* **What it is:** Read the section directly below regarding my use of multi-constraint AI prompting. 
+* **The Goal:** I used a large language model as a collaborative sounding board to stress-test prompt structures. The end goal was to reverse-engineer a single, highly constrained prompt capable of reproducing this entire repository flawlessly in one go.
 
 ---
 
