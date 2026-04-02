@@ -25,14 +25,7 @@ To maintain maximum transparency, cost control, and a deep technical understandi
 <summary><b>Click to expand full operational breakdown of the Manual AWS Build</b></summary>
 
 ### Project Overview
-The goal of this project was to architect and manually deploy... 
-(Paste all your manual build text, screenshots, and steps here)
 
-</details>
-
-# Case Study: Building a High-Availability WordPress Stack on AWS
-
-## 1. Project Overview
 The goal of this project was to architect and manually deploy a highly available, three-tier WordPress environment on AWS. By building this from scratch in the AWS Console, I gained a deep operational understanding of secure networking, high-availability compute, and decoupled data layers. This project demonstrates a security-first approach, utilizing private subnets, NAT Gateways for secure egress, and automated recovery via Auto Scaling and Launch Template versioning.
 
 ### Figure 0: High-Level Solution Architecture
@@ -143,3 +136,6 @@ Engineering is the art of making calculated trade-offs. To deliver this project 
 * **Local EBS vs. Shared File Systems (EFS):**
   * *The Decision:* Used standard EBS volumes for storage on each instance.
   * *The Trade-off:* This is the most cost-effective storage option, but it means media files uploaded to one WordPress instance won't automatically sync to the other instance in the Auto Scaling Group. To make this production-ready, we would trade the cost savings of EBS for a shared **Amazon EFS** mount or offload media files to **Amazon S3**.
+
+
+</details>
