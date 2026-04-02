@@ -140,7 +140,7 @@ Engineering is the art of making calculated trade-offs. To deliver this project 
 
 </details>
 
-## 🛠️ Core Skills & Tooling Mastered
+## 🛠️ Core Skills & Tooling Utilized
 
 To execute this project across all three iterations, I had to learn and implement a modern DevOps tech stack from scratch. 
 
