@@ -139,3 +139,15 @@ Engineering is the art of making calculated trade-offs. To deliver this project 
 
 
 </details>
+
+## 🛠️ Core Skills & Tooling Mastered
+
+To execute this project across all three iterations, I had to learn and implement a modern DevOps tech stack from scratch. 
+
+| Category | Tools & Concepts Learned |
+| :--- | :--- |
+| **Cloud Infrastructure** | AWS (VPC, EC2, RDS, ALB, ASG, IAM, Route Tables, IGW, NAT Gateways) |
+| **Infrastructure as Code** | Terraform (HCL), State Management, Variables, Data Sources, Lifecycle Rules |
+| **Dev Environment** | VS Code, Git, GitHub, CLI execution, YAML/Markdown documentation |
+| **Linux Administration** | SSH, Apache (httpd) setup, package management (yum), file permissions (`chmod`/`chown`) |
+| **Modern AI Workflows** | Prompt Engineering, Role-Based constraints, AI output auditing and debugging |
