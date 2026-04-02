@@ -11,7 +11,7 @@ To maintain maximum transparency, cost control, and a deep technical understandi
 * **The Goal:** To gain a deep operational understanding of secure networking, high-availability compute, and decoupled data layers before touching automation.
 
 ### 📍 Iteration 2: Manual HCL & Basic Translation
-* **What it is:** Click into the `terraform-automation/` folder to see the complete set of dry, reusable Terraform blueprints that script this exact same environment.
+* **What it is:** Click into the terraform-automation/ folder to see the complete set of dry, reusable Terraform blueprints that script this exact same environment.
 * **The Goal:** I manually translated my physical build into Infrastructure as Code (IaC) files to understand the modern DevOps lifecycle and establish local state environments.
 
 ### 📍 Iteration 3: Advanced AI Prompt Engineering (The "One-Shot" Goal)
