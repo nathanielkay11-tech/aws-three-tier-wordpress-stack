@@ -19,6 +19,16 @@ To maintain maximum transparency, cost control, and a deep technical understandi
 * **The Goal:** I used a large language model as a collaborative sounding board to stress-test prompt structures. The end goal was to reverse-engineer a single, highly constrained prompt capable of reproducing this entire repository flawlessly in one go.
 
 ---
+## 📍 Iteration 1: Manual Deployment Case Study
+
+<details>
+<summary><b>Click to expand full operational breakdown of the Manual AWS Build</b></summary>
+
+### Project Overview
+The goal of this project was to architect and manually deploy... 
+(Paste all your manual build text, screenshots, and steps here)
+
+</details>
 
 # Case Study: Building a High-Availability WordPress Stack on AWS
 
